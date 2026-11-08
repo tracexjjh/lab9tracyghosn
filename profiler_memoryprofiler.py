@@ -15,12 +15,10 @@ def slow_function():
 
 
 @profile
-def fast_function():
-    total = 0
-    for i in range(100):
-        total += i ** 2
-
-    return total
+def optimized_fast_function():
+    """Return the sum of squares from 0 through 99 without a loop."""
+    n = 100
+    return n * (n - 1) * (2 * n - 1) // 6
 
 
 @profile
@@ -34,7 +32,7 @@ def memory_intensive_function():
 
 def main():
     slow_function()
-    fast_function()
+    optimized_fast_function()
     memory_intensive_function()
 
 
